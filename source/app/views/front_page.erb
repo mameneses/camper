@@ -1,0 +1,15 @@
+<nav class="nav mobile-nav-table nav-tabs clearfix">
+    <a href="/" class="bold h3">Camper </a>
+    <% if session[:id] %>
+    <a href="/campgrounds" >Search</a>
+    <a href="/users/<%=session[:id]%>/favorites">Favorites</a>
+    <a href="/logout">Log Out</a>
+    <%else%>
+    <a href="/register">Register</a>
+    <a href="/campgrounds">Search</a>
+    <a href="/login">Sign In</a>
+    <%end%>
+  </div>
+</nav>
+<div class= "absolute top-0 left-0 m4 p4 h1 bold clr-main">Welcome to CAMPER</div>
+<div class= "absolute top-0 left-0 m3 p4 h3 clr-main">Go the fuck outside!</div>

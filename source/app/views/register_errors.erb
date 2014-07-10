@@ -1,28 +1,40 @@
-<h1>Register</h1>
+<nav class="nav mobile-nav-table nav-tabs clearfix">
+    <a href="/" class="bold h3">Camper </a>
+    <% if session[:id] %>
+    <a href="/campgrounds" >Search</a>
+    <a href="/users/<%=session[:id]%>/favorites">Favorites</a>
+    <a href="/logout">Log Out</a>
+    <%else%>
+    <a href="/register" class="active">Register</a>
+    <a href="/campgrounds">Search</a>
+    <a href="/login">Sign In</a>
+    <%end%>
+  </div>
+</nav>
 <form name="create-user" action="/users" method="post">
-	<h3>First Name</h3>
-	<input type="text" name="first_name" placeholder="Ex: John" value='<%=@first_name%>' >
+	<label class="m1">First Name:</label>
+	<input class="m1" type="text" name="first_name" placeholder="Ex: John" value='<%=@first_name%>' >
 	<ul>
 		<% @user.errors[:first_name].each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
-	<h3>Last Name</h3>
-	<input type="text" name="last_name" placeholder="Ex: Doe" value="<%= @last_name %>">
-	<h3>Email</h3>
-	<input type="text" name="email" placeholder= "Ex: example@email.com" value="<%= @email%>">
+	<label class="m1">Last Name:</label>
+	<input class="m1" type="text" name="last_name" placeholder="Ex: Doe" value="<%= @last_name %>"> <br>
+	<label class="m1">Email    :</label>
+	<input class="m1" type="text" name="email" placeholder= "Ex: example@email.com" value="<%= @email%>">
 	<ul>
 		<% @user.errors[:email].each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
-	<h3>Password</h3>
-	<input type="text" name="password" placeholder="At least 8 characters">
+	<label class="m1">Password:</label>
+	<input class="m1" type="text" name="password" placeholder="At least 8 characters">
 	<ul>
 		<% @user.errors[:password].each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
 	<br>
-	<input type="submit" value="Submit">
+	<input class="m1" type="submit" value="Submit">
 </form>

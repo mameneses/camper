@@ -1,5 +1,17 @@
+<nav class="nav mobile-nav-table nav-tabs clearfix">
+    <a href="/" class="bold h3">Camper </a>
+    <% if session[:id] %>
+    <a href="/campgrounds" >Search</a>
+    <a href="/users/<%=session[:id]%>/favorites">Favorites</a>
+    <a href="/logout">Log Out</a>
+    <%else%>
+    <a href="/register">Register</a>
+    <a href="/campgrounds">Search</a>
+    <a href="/login" class="active">Sign In</a>
+    <%end%>
+  </div>
+</nav>
 <div>
-	<h1>Sign In</h1>
 	<form class="form form-stacked form-light" name="login" action="/login" method="post">
 		<label class="m2">Email:</label>
 		<input type="email" name="email" placeholder= "Ex: example@email.com">

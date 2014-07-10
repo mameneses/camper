@@ -77,7 +77,7 @@ post '/campgrounds' do
 
 		  erb :campgrounds
 	  else
-	  	erb :campgrounds
+	  	erb :campgrounds_nil
 	  end
 end
 

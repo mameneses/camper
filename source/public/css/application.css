@@ -1,5 +1,5 @@
-html { 
-  background: url("http://i.imgur.com/A2rAqMT.jpg") no-repeat center center fixed; 
+html {
+  background: url("http://i.imgur.com/A2rAqMT.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,4 +8,8 @@ html {
 
 .w280{
 	width:128px;
+}
+
+.clr-main {
+  color:#3794D7;
 }
