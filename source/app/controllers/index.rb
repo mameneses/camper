@@ -30,14 +30,18 @@ post '/users' do
 	create_new_user
 end
 
-get '/users/:user_id/campground/:park_num' do
-	@user = User.find(params[:user_id])
-	@campground = Campground.where(park_num: params[:park_num])
-	@user.campgrounds << @campground
+get '/users/:user_id/favorites' do
+	erb :favorites
 end
 
 get '/campgrounds' do
 	erb :campgrounds
+end
+
+get '/add_fav/campgrounds/:park_num' do
+	@user = User.find(session[:id])
+    @campground = Campground.where(park_num: params[:park_num])
+    @user.campgrounds << @campground
 end
 
 post '/campgrounds' do

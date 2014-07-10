@@ -4,21 +4,16 @@ $(document).ready(function() {
   function bindEvents() {
     $(document).on('click', '.add_fav', function(e) {
       e.preventDefault()
-      addFav(e.target, this)
+      var addurl = this.action
+      addFav(e.target, addurl)
    })
   }
 
-function addFav(title, todourl) {
+function addFav(session_id, addurl) {
   var ajaxrequest = $.ajax({
-    url: todourl,
-    type: 'post',
-    data: title
+    url: addurl,
+    type: 'get',
   })
-  ajaxrequest.success(newTodo)
-}
-
-function newTodo(data) {
-  $('.todo_list').append(data.html)
 }
 
 });

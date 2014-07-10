@@ -1,8 +1,14 @@
-<% session[:user].campgrounds.each do |camp| %>
-<img src="http://www.reserveamerica.com<%= camp.pic_url%>" >
-      <li> Name: <%= camp.name %> </li>
-      <li> State: <%= camp.state %> </li>
-      <li> Amenity: <%= camp.amenity %> </li>
-      <li> Site Type: <%= camp.site_type %> </li>
-      <li> Pets?: <%= camp.pets %> </li>
-      <li> Water Front: <%= camp.water_front %> </li>
+<% User.find(session[:id]).campgrounds.each do |camp| %>
+	<div data-component="media-object" class="clearfix">
+		<img src="http://www.reserveamerica.com<%= camp.pic_url%>" class="left mr2">
+		<div class="oh">
+		<h4> Name: <%= camp.name %> </h4>
+		<h4> State: <%= camp.state %> </h4>
+		<h4> Amenity: <%= camp.amenity %> </h4>
+		<h4> Site Type: <%= camp.site_type %> </h4>
+		<h4> Pets?: <%= camp.pets %> </h4>
+		<h4> Water Front: <%= camp.water_front %> </h4>
+		<div>
+	</div>
+	<hr>
+<%end%>

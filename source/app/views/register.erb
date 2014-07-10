@@ -1,13 +1,14 @@
 <h1>Register</h1>
-<form name="create-user" action="/users" method="post">
-	<h3>First Name</h3>
+<form class="form form-stacked form-light" name="create-user" action="/users" method="post">
+	<label class="m2">First Name:</label>
 	<input type="text" name="first_name" placeholder="Ex: John">
-	<h3>Last Name</h3>
+	<label class="m2">Last Name:</label>
 	<input type="text" name="last_name" placeholder="Ex: Doe">
-	<h3>Email</h3>
-	<input type="text" name="email" placeholder= "Ex: example@email.com">
-	<h3>Password</h3>
-	<input type="text" name="password" placeholder="At least 8 characters">
 	<br>
+	<br>
+	<label class="m2">Email:</label>
+	<input type="text" name="email" placeholder= "Ex: example@email.com">
+	<label class="m2">Password:</label>
+	<input class="mb2" type="text" name="password" placeholder="At least 8 characters">
 	<input type="submit" value="Submit">
 </form>

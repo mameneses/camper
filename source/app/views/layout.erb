@@ -10,6 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
+  <link rel="stylesheet" href="/css/basscss.css">
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,19 +19,18 @@
   <title></title>
 </head>
 <body>
-<nav>
- <div> <a href="/">Camper </a></div>
-  <ul>
-    <% if session[:user] %>
-    <li><a href="/logout">Log Out</a></li>
-    <li><a href="/campgrounds">Search</a>
-    <li><a href="/favroties">Favorites</a>
+<nav class="nav mobile-nav-table nav-tabs">
+    <a href="/">Camper </a>
+    <% if session[:id] %>
+    <a href="/campgrounds">Search</a>
+    <a href="/users/<%=session[:id]%>/favorites">Favorites</a> 
+    <a href="/logout">Log Out</a>
     <%else%>
-    <li> <a href="/login">Sign In</a></li>
-    <li> <a href="/register">Register</a></li>
-    <li><a href="/campgrounds">Search</a>
+     <a href="/login">Sign In</a>
+     <a href="/register">Register</a>
+    <a href="/campgrounds">Search</a>
     <%end%>
-  </ul>
+  </div>
 </nav>
   <%= yield %>
 </body>

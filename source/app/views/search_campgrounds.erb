@@ -1,12 +1,12 @@
-<div>
+<div class="center">
 <h1>Find Campground</h1>
 <h6>* = required fields</h6>
-  <form action="/campgrounds" method="post">
-    <h4> Park name:</h4>
-    <input type="text" name="park_name">
-    <h4>Amenity:</h4>
+  <form class="form form-stacked form-light" action="/campgrounds" method="post">
+    <label class="mr2 mb2"> Park name:</label>
+    <input type="text" name="park_name"> <br>
+    <label class="mr2 mb2">Amenity:</label>
     <select name="amenity">
-      <option value="4001"> biking</option>
+      <option value="4001"> Biking</option>
       <option value="4002"> Boating</option>
       <option value="4003"> Equipment Rental </option>
       <option value="4004"> Fishing </option>
@@ -18,9 +18,9 @@
       <option value="4011"> Sports</option>
       <option value="4012"> Beach/Water Activites</option>
       <option value="4013"> Winter Activites</option>
-    </select>
+    </select><br>
 
-    <h4>State: *</h4>
+    <label class="mr2 mb2">* State:</label>
     <select name="state">
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
@@ -73,9 +73,9 @@
       <option value="WV">West Virginia</option>
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
-    </select>
+    </select><br>
 
-    <h4>Site Type:</h4>
+    <label class="mr2 mb2">Site Type:</label>
     <select name="site_type">
       <option value="10001">Cabins or Lodgings</option>
       <option value="2003" >Tent</option>
@@ -83,20 +83,20 @@
       <option value="9001" >Day Use</option>
       <option value="3001" > Horse Site</option>
       <option value="2004" >Boat Site</option>
-    </select>
+    </select><br>
 
-    <h4>Pets Allowed:</h4>
+    <label class="mr2 mb2">Pets Allowed:</label>
     <select name="pets">
       <option value="3010"> Yes</option>
       <option value="no">No</option>
-    </select>
+    </select><br>
 
-    <h4>Water Front: </h4>
+    <label class="mr2 mb2">Water Front: </label>
     <select name="water_front">
       <option value="3011"> Yes</option>
       <option value="no">No</option>
     </select>
     <br>
-    <input type='submit' value='Submit'>
+    <input  type='submit' value='Submit'>
   </form>
 </div>

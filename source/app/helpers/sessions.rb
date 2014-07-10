@@ -1,8 +1,8 @@
 helpers do
 
   def current_user
-    if session[:user]
-      session[:user]
+    if session[:id]
+      session[:id]
     end
   end
 
@@ -28,8 +28,8 @@ helpers do
     if user_exists?(params[:email])
       @user = User.find_by_email(params[:email])
       if @user.password == params[:password]
-        session[:user] = User.find_by_email(params[:email])
-        redirect"/users/#{@user.id}/favorites"
+        session[:id] = User.find_by_email(params[:email]).id
+        redirect"/users/#{session[:id]}/favorites"
       else
         redirect '/'
       end

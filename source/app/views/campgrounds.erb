@@ -1,8 +1,14 @@
-<div>
-	<%= erb :search_campgrounds %>
-</div>
-<div>
-	<% if @campgrounds %>
-	<%= erb :display_campgrounds %>
-	<%end%>
+<div class="row">
+  <div class="mobile-col mobile-col-6 col-5">
+    <div>
+      <%= erb :search_campgrounds %>
+    </div>
+  </div>
+  <div class="mobile-col mobile-col-6 col-7">
+    <div>
+    <% if @campgrounds %>
+    <%= erb :display_campgrounds %>
+    <%end%>
+    </div>
+  </div>
 </div>
