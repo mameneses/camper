@@ -1,0 +1,8 @@
+<% session[:user].campgrounds.each do |camp| %>
+<img src="http://www.reserveamerica.com<%= camp.pic_url%>" >
+      <li> Name: <%= camp.name %> </li>
+      <li> State: <%= camp.state %> </li>
+      <li> Amenity: <%= camp.amenity %> </li>
+      <li> Site Type: <%= camp.site_type %> </li>
+      <li> Pets?: <%= camp.pets %> </li>
+      <li> Water Front: <%= camp.water_front %> </li>

@@ -1,0 +1,14 @@
+<ul>
+    <% @campgrounds.each do |camp| %>
+    	<img src="http://www.reserveamerica.com<%= camp.first.pic_url%>" >
+      <li> Name: <%= camp.first.name %> </li>
+      <li> State: <%= camp.first.state %> </li>
+      <li> Amenity: <%= camp.first.amenity %> </li>
+      <li> Site Type: <%= camp.first.site_type %> </li>
+      <li> Pets?: <%= camp.first.pets %> </li>
+      <li> Water Front: <%= camp.first.water_front %> </li>
+      <%if session[:user]%>
+      <button> <a class="add_fav" href="add_fav/users/<%=session[:user].id%>/campground/<%=camp.first.park_num%>">Add to Favorites</a></button>
+      <%end%>
+     <% end %>
+</ul>

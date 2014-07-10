@@ -1,0 +1,73 @@
+require 'debugger'
+
+get '/' do
+	erb :front_page
+end
+
+get '/login' do
+	erb :login
+end
+
+post '/login' do
+	 @user = User.find_by_email(params[:email]) 
+	 login
+end
+
+get '/logout' do
+	session.clear
+	redirect '/'
+end
+
+get '/register' do
+	erb :register
+end
+
+post '/users' do
+	@first_name = params[:first_name]
+	@last_name = params[:last_name]
+	@email = params[:email]
+	@password = params[:password]
+	create_new_user
+end
+
+get '/users/:user_id/campground/:park_num' do
+	@user = User.find(params[:user_id])
+	@campground = Campground.where(park_num: params[:park_num])
+	@user.campgrounds << @campground
+end
+
+get '/campgrounds' do
+	erb :campgrounds
+end
+
+post '/campgrounds' do
+	  @amenity = params[:amenity]
+	  @state = params[:state]
+	  @site_type = params[:site_type]
+	  @pets = params[:pets]
+	  @water = params[:water_fornt]
+	  @name = params[:park_name].upcase
+
+	  url = "http://api.amp.active.com/camping/campgrounds/?pstate=#{@state}&pname=#{@name}&siteType=#{@site_type}&amenity=#{@amenity}&pets=#{@pets}&waterfront=#{@water}&api_key=hyywz8fhebjc8exgffdqm8qe"
+	  
+	  query_campgrounds = xml_parser(url)
+
+	  if query_campgrounds != nil
+		  park_ids = store_campgrounds(query_campgrounds)
+		  @campgrounds = []
+		  park_ids.each do |num|
+			  @campgrounds << Campground.where(park_num: num)
+		  end 
+		  @campgrounds
+
+		  erb :campgrounds
+	  else
+	  	erb :campgrounds
+	  end
+end
+
+
+
+
+
+

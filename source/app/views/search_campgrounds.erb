@@ -1,0 +1,102 @@
+<div>
+<h1>Find Campground</h1>
+<h6>* = required fields</h6>
+  <form action="/campgrounds" method="post">
+    <h4> Park name:</h4>
+    <input type="text" name="park_name">
+    <h4>Amenity:</h4>
+    <select name="amenity">
+      <option value="4001"> biking</option>
+      <option value="4002"> Boating</option>
+      <option value="4003"> Equipment Rental </option>
+      <option value="4004"> Fishing </option>
+      <option value="4005"> Golf</option>
+      <option value="4006"> Hiking </option>
+      <option value="4007"> Horseback Riding</option>
+      <option value="4008"> Hunting</option>
+      <option value="4010"> Scenic Trails</option>
+      <option value="4011"> Sports</option>
+      <option value="4012"> Beach/Water Activites</option>
+      <option value="4013"> Winter Activites</option>
+    </select>
+
+    <h4>State: *</h4>
+    <select name="state">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </select>
+
+    <h4>Site Type:</h4>
+    <select name="site_type">
+      <option value="10001">Cabins or Lodgings</option>
+      <option value="2003" >Tent</option>
+      <option value="9002" >Group Site</option>
+      <option value="9001" >Day Use</option>
+      <option value="3001" > Horse Site</option>
+      <option value="2004" >Boat Site</option>
+    </select>
+
+    <h4>Pets Allowed:</h4>
+    <select name="pets">
+      <option value="3010"> Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <h4>Water Front: </h4>
+    <select name="water_front">
+      <option value="3011"> Yes</option>
+      <option value="no">No</option>
+    </select>
+    <br>
+    <input type='submit' value='Submit'>
+  </form>
+</div>
