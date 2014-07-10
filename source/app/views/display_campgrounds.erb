@@ -12,10 +12,15 @@
 		<div> Pets?: <%= camp.first.pets %> </div>
 		<div> Water Front: <%= camp.first.water_front %> </div>
 		<%if session[:id]%>
-		<button> <a href="/add_fav/campgrounds/<%=camp.first.park_num%>" class="add_fav">Add to Favorites</a> </button>
-		<br>
+		<form action="/add_fav" method="post" class="add_fav">
+			<input type="hidden" name="park_num" value="<%=camp.first.park_num%>">
+			<input type="submit" name="add_fav" value="Add to Favorites">
+		</form>
 		<%end%>
+		<br>
 		<hr>
 	</div>
+
+
 </div>
 <%end%>

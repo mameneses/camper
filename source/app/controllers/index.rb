@@ -9,7 +9,7 @@ get '/login' do
 end
 
 post '/login' do
-	 @user = User.find_by_email(params[:email]) 
+	 @user = User.find_by_email(params[:email])
 	 login
 end
 
@@ -39,10 +39,12 @@ get '/campgrounds' do
 	erb :campgrounds
 end
 
-get '/add_fav/campgrounds/:park_num' do
-	@user = User.find(session[:id])
+post '/add_fav' do
+	content_type :json
+		@user = User.find(session[:id])
     @campground = Campground.where(park_num: params[:park_num])
     @user.campgrounds << @campground
+  {park_id: params[:park_num]}.to_json
 end
 
 post '/campgrounds' do
@@ -54,7 +56,7 @@ post '/campgrounds' do
 	  @name = params[:park_name].upcase
 
 	  url = "http://api.amp.active.com/camping/campgrounds/?pstate=#{@state}&pname=#{@name}&siteType=#{@site_type}&amenity=#{@amenity}&pets=#{@pets}&waterfront=#{@water}&api_key=hyywz8fhebjc8exgffdqm8qe"
-	  
+
 	  query_campgrounds = xml_parser(url)
 
 	  if query_campgrounds != nil
@@ -62,7 +64,7 @@ post '/campgrounds' do
 		  @campgrounds = []
 		  park_ids.each do |num|
 			  @campgrounds << Campground.where(park_num: num)
-		  end 
+		  end
 		  @campgrounds
 
 		  erb :campgrounds
