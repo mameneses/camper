@@ -2,7 +2,7 @@
 <% @campgrounds.each do |camp| %>
 <div data-component="media-object" class="clearfix">
 	<% if camp.first.pic_url == "/images/nophoto.jpg" %>
-	<img src="http://i.imgur.com/A2rAqMT.jpg" class="left mr2 w280">
+	<img src="https://raw.githubusercontent.com/chorus-frogs-2014/ph2-p10a-build-something-beautiful-challenge/matias/source/polyscape%20copy.jpeg?token=6801325__eyJzY29wZSI6IlJhd0Jsb2I6Y2hvcnVzLWZyb2dzLTIwMTQvcGgyLXAxMGEtYnVpbGQtc29tZXRoaW5nLWJlYXV0aWZ1bC1jaGFsbGVuZ2UvbWF0aWFzL3NvdXJjZS9wb2x5c2NhcGUgY29weS5qcGVnIiwiZXhwaXJlcyI6MTQwNTU4OTY5NX0%3D--46564390806632ab6249c43d3e4f908fb52cf7d3" class="left mr2 w280">
 	<%else%>
 	<img src="http://www.reserveamerica.com<%= camp.first.pic_url%>" class="left mr2 w280">
 	<%end%>
