@@ -1,0 +1,14 @@
+<div class="row">
+<%if session[:id] %>
+  <div class="mobile-col mobile-col-6 col-5">
+    <div>
+      <%= erb :profile %>
+    </div>
+  </div>
+  <div class="mobile-col mobile-col-6 col-7">
+    <div>
+    <%= erb :favorites %>
+    </div>
+  </div>
+  <%end%>
+</div>

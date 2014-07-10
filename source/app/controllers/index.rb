@@ -31,7 +31,8 @@ post '/users' do
 end
 
 get '/users/:user_id/favorites' do
-	erb :favorites
+	@user = User.find(session[:id])
+	erb :prof_fav
 end
 
 get '/campgrounds' do

@@ -1,10 +1,3 @@
-/*.nav {
-	position: fixed;
-	height: 60px;
-	width: 100%;
-	background-color: green;
-}*/
-
 html { 
   background: url("http://i.imgur.com/A2rAqMT.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -13,13 +6,6 @@ html {
   background-size: cover;
 }
 
-.inline {
-	display:inline;
-}
-
-.white {
-	color:white;
-}
 .w280{
 	width:128px;
 }

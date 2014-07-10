@@ -1,3 +1,5 @@
+
+<h1>Favorites</h1>
 <% User.find(session[:id]).campgrounds.each do |camp| %>
 	<div data-component="media-object" class="clearfix">
 		<img src="http://www.reserveamerica.com<%= camp.pic_url%>" class="left mr2">
