@@ -35,6 +35,14 @@ get '/users/:user_id/favorites' do
 	erb :prof_fav
 end
 
+post '/remove/:park_num' do
+	content_type :json
+	camp = Campground.find_by_park_num(params[:park_num]).id
+	user = session[:id]
+	Favorite.where(user_id: user).where(campground_id: camp).first.destroy
+	{park_id: params[:park_num]}.to_json
+end
+
 get '/campgrounds' do
 	erb :campgrounds
 end

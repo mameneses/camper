@@ -1,7 +1,7 @@
 
 <h1>Favorites</h1>
 <% User.find(session[:id]).campgrounds.each do |camp| %>
-<div data-component="media-object" class="clearfix">
+<div data-component="media-object" name="<%=camp.park_num%>" class="clearfix">
 	<% if camp.pic_url == "/images/nophoto.jpg" %>
 	<img src="https://raw.githubusercontent.com/chorus-frogs-2014/ph2-p10a-build-something-beautiful-challenge/matias/source/polyscape%20copy.jpeg?token=6801325__eyJzY29wZSI6IlJhd0Jsb2I6Y2hvcnVzLWZyb2dzLTIwMTQvcGgyLXAxMGEtYnVpbGQtc29tZXRoaW5nLWJlYXV0aWZ1bC1jaGFsbGVuZ2UvbWF0aWFzL3NvdXJjZS9wb2x5c2NhcGUgY29weS5qcGVnIiwiZXhwaXJlcyI6MTQwNTU4OTY5NX0%3D--46564390806632ab6249c43d3e4f908fb52cf7d3" class="left mr2 w280">
 	<%else%>
@@ -15,6 +15,9 @@
 		<h4> Pets?: <%= camp.pets %> </h4>
 		<h4> Water Front: <%= camp.water_front %> </h4>
 	</div>
+	<button> <a href="/remove/<%=camp.park_num%>" class="remove">Remove</a></button>
+	<hr>
 </div>
-<hr>
+
+
 <%end%>

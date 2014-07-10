@@ -9,7 +9,25 @@ $(document).ready(function() {
       addFav(park_id, addurl)
       // debugger
    })
+      $(document).on('click', '.remove', function(e) {
+      e.preventDefault()
+      deleteTodo(e.target)
+   })
   }
+
+function deleteTodo(target){
+    var target = target
+    var urlDelete = target.href
+    var ajaxrequest = $.ajax({
+      url: urlDelete,
+      type: 'post'
+    })
+    ajaxrequest.success(takeout)
+  }
+
+function takeout(data) {
+  $("div[name='" + data['park_id'] + "']").remove()
+}
 
 function addFav(park_id, addurl){
   var ajaxrequest = $.ajax({
