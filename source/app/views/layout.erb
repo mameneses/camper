@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/basscss.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+<nav class="nav mobile-nav-table nav-tabs">
+    <a href="/">Camper </a>
+    <% if session[:id] %>
+    <a href="/campgrounds">Search</a>
+    <a href="/users/<%=session[:id]%>/favorites">Favorites</a> 
+    <a href="/logout">Log Out</a>
+    <%else%>
+     <a href="/login">Sign In</a>
+     <a href="/register">Register</a>
+    <a href="/campgrounds">Search</a>
+    <%end%>
+  </div>
+</nav>
+  <%= yield %>
+</body>
+</html>

@@ -1,0 +1,11 @@
+html { 
+  background: url("http://i.imgur.com/A2rAqMT.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.w280{
+	width:128px;
+}
